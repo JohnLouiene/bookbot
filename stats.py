@@ -13,3 +13,13 @@ def get_ch_dict(string):
         else:
             ch_count[ch] += 1
     return ch_count
+
+#Takes a dictionary and returns a sorted list
+def sort_dict(dictionary):
+    sorted_list = list()
+    for ch in dictionary:
+        num = dictionary[ch]
+        sorted_list.append([ch, num])
+
+    sorted_list.sort(key=lambda x:x[1], reverse=True)
+    return sorted_list
