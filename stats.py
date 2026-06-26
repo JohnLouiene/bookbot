@@ -23,3 +23,17 @@ def sort_dict(dictionary):
 
     sorted_list.sort(key=lambda x:x[1], reverse=True)
     return sorted_list
+
+def sort_on(list_to_sort: tuple[str, int]) -> int:
+    return list_to_sort[1]
+
+def chars_dict_to_sorted_list(sorted_dict: dict[str, int]) -> list[tuple[str, int]]:
+    sorted_list = []
+
+    for key in sorted_dict.keys():
+        sorted_list.append((key, sorted_dict[key]))
+
+    sorted_list = sorted(sorted_list, key=sort_on, reverse=True)
+
+    return sorted_list
+    
